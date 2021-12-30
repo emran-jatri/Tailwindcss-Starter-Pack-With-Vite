@@ -20,7 +20,7 @@ npm run dev
 
 ```
 npm init -y
-npm install -D tailwindcss@latest postcss-cli@latest autoprefixer@latest vite
+npm install -D tailwindcss@latest postcss-cli@latest autoprefixer@latest vite postcss-import daisyui
 ```
 
 ### Tailwind Full Config
@@ -44,6 +44,25 @@ module.exports = {
   plugins: [require("daisyui")],
 }
 ```
+
+# postcss.config.js
+
+```javascript
+module.exports = {
+  plugins: {
+		"postcss-import": {},
+		'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+# css/tailwind.css
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 
 # package.json
 
